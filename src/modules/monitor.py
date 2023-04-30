@@ -27,6 +27,12 @@ class Monitor :
     def _get_monitor_offset(self):
         pass
     
+    def move_cursor(self, coord_x: int, coord_y: int):
+        pass
+    
+    def click_on_mouse(self):
+        pass
+    
     def focus_on_window(self, window_id: int):
         self.windows[window_id].focus()
     
@@ -167,6 +173,12 @@ class MonitorMac(Monitor):
     def _get_monitor_offset():
         pass
     
+    def move_cursor(self, coord_x: int, coord_y: int):
+        pass
+    
+    def click_on_mouse(self):
+        pass
+    
     
 class MonitorWindows(Monitor):
     
@@ -191,3 +203,10 @@ class MonitorWindows(Monitor):
         self.x_offset = monitor_rect.left 
         self.y_offset = monitor_rect.top 
     
+    def move_cursor(self, coord_x: int, coord_y: int):
+        x = coord_x + self.x_offset
+        y = coord_y + self.y_offset
+        pyautogui.moveTo((x, y))
+    
+    def click_on_mouse(self):
+        pyautogui.click(button='left')
