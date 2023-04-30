@@ -1,11 +1,12 @@
-from modules.monitor import Monitor 
+from modules.monitor import * 
+from modules.window import * 
 import Quartz
 import subprocess
 import psutil
 
 
 def main():
-  MONITOR = Monitor(1)
+  MONITOR = MonitorMac(1)
   
   DOFUS_WINS = MONITOR.init_dofus_windows()
   for win in DOFUS_WINS :

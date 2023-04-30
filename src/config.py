@@ -1,5 +1,5 @@
 import platform
-from modules.logs.logs import Logs
+# from modules.logs.logs import Logs
 
 # Get os type 
 OS = platform.system()
@@ -58,4 +58,4 @@ P_SCAN_X_SKIP = 0
 P_SCAN_Y_SKIP = 0
 
 # Logs object instance
-LOGS = Logs()
+# LOGS = Logs()

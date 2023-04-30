@@ -16,7 +16,7 @@ class Action :
 class MoveArrow(Action) : 
 
   def __init__(self, arrow: str)->None :
-    super()__init__()
+    super().__init__()
     self.arrow = arrow
 
   def do(self)->bool :
@@ -28,7 +28,7 @@ class MoveArrow(Action) :
 class MoveCoords(Action) : 
 
   def __init__(self, x: int,y:int)->None :
-    super()__init__()
+    super().__init__()
     self.x = x
     self.y = y
 
@@ -49,7 +49,7 @@ class MoveCoords(Action) :
 character = Character()
 character.execute_Action(MoveArrow("Left"))
 character.execute_Action(MoveCoords(45,34))
-character.execute_Action(Action("Recole Ble"))
+character.execute_Agitction(Action("Recole Ble"))
 
 character.execute_strategy([MoveArrow("Left")])
 character.execute_strategy([MoveArrow("Left"),MoveArrow("Right"),MoveArrow("Top"),MoveArrow("Left")])
