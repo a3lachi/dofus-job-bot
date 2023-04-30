@@ -184,8 +184,15 @@ class MonitorWindows(Monitor):
     
     def __init__(self, _id: int):
         super().__init__(_id)
+        # Gets dofus windows associated to this monitor
         self._get_dofus_windows()
+        # Gets the current screen top, left pixel coordinates
+        monitor_rect = pyautogui.getMonitors()[_id]
         self._get_monitor_offset
+        # Monitor's width and height are equal to full screen window size
+        self.windows[0].maximize()
+        self.width = self.windows[0].width
+        self.height = self.windows[0].height 
         
     def _get_dofus_windows(self):
         monitor_rect = pyautogui.locateOnScreen(self._id)

@@ -6,7 +6,7 @@ OS = platform.system()
 OS_MAC = 'Darwin'
 OS_WINDOWS = 'Windows'
 
-# Wheat map positions file path-------------------------------------------------------------------
+# Recoltable map positions file path-------------------------------------------------------------------
 RECOLTABLE_MAP_POSITIONS_FILE_PATH = lambda recoltable: f"../data/{recoltable}_map_positions.csv"
 
 # "Dofosdb" api url for web scraping recoltable map positions.
@@ -14,6 +14,11 @@ DOFUSDB_API_URL =  "https://api.dofusdb.fr/recoltable"
 RECOLTABLE_NAME = 'wheat'
 WHEAT_API_ID = 289
 NMAX_RESPONSES = 91
+
+# Recoltables
+RECOLTABLE_NAMES = ['ble', 'avoine', 'houblon']
+STR_RECOLTABLE_AVAILABLE = ['fauch']
+STR_RECOLTABLE_UNAVAILABLE = ['puis']
 
 # Move from map position to another : You can only move RIGHT, LEFT, UP, DOWN.--------------------
 RIGHT = (1103, 389)
@@ -39,8 +44,8 @@ P_MOUSE_TOP = 0
 P_MOUSE_RIGHT = 0
 P_MOUSE_BOTTOM = 0
 # Box minimal (width, height) 
-P_MOUSE_MIN_HEIGHT = 50
-P_MOUSE_MAX_HEIGHT = 50 
+P_MOUSE_MIN_HEIGHT = 0
+P_MOUSE_MAX_HEIGHT = 0 
 
 # Game Usable ground box cooridnates -------------------------------------------------------------
 # Percentage for box edges
@@ -48,6 +53,9 @@ P_GROUND_LEFT = 0
 P_GROUND_TOP = 0
 P_GROUND_RIGHT = 0
 P_GROUND_BOTTOM =0
+# Scanner percentage of inbetween edge size in the grid search
+P_SCAN_X_SKIP = 0 
+P_SCAN_Y_SKIP = 0
 
 # Logs object instance
 LOGS = Logs()
