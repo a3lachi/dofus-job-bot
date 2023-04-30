@@ -6,11 +6,12 @@ import psutil
 
 
 def main():
+  print('YES')
   MONITOR = MonitorMac(1)
   
-  DOFUS_WINS = MONITOR.init_dofus_windows()
-  for win in DOFUS_WINS :
-    print('[x] - IS VISIBLE',win.is_visible())
+  # DOFUS_WINS = MONITOR.init_dofus_windows()
+  # for win in DOFUS_WINS :
+  #   print('[x] - IS VISIBLE',win.is_visible())
 
   # win_number = DOFUS_WINS[0].window.get("kCGWindowNumber", 0)
   
