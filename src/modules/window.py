@@ -8,7 +8,7 @@ class Window :
       A class for the window object
     
     """
-    def __init__(self, _id: int, name: str, window) -> None:
+    def __init__(self, _id: int, name: str, window):
       self.id = _id
       self.name = name
       self.window = window
@@ -21,7 +21,7 @@ class Window :
 
 class WindowMac(Window) :
   
-    def __init__(self, _id: int, name: str, window) -> None:
+    def __init__(self, _id: int, name: str, window):
         super().__init__(id, name, window)
 
     def focus(self) -> bool :
