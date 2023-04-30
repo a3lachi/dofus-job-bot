@@ -35,7 +35,13 @@ class Monitor :
 
         """
         pass
-            
+    
+    def move_cursor(self, coord_x: int, coord_y: int):
+        pass
+    
+    def click_on_mouse(self):
+        pass
+    
     def focus_on_window(self, window_id: int):
         """ 
         Switches focus to the specified window identified by `window_id`.
