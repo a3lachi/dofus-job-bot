@@ -22,15 +22,31 @@ class Monitor :
         self.x_offset = 0
         
     def _get_dofus_windows(self):
+        """
+        Gets the Dofus windows associated with this monitor.
+        """
         pass
     
     def _get_monitor_offset(self):
+        """
+        Gets the pixel coordinates of the top-left corner of the monitor screen.
+        """
         pass
     
     def move_cursor(self, coord_x: int, coord_y: int):
+        """
+        Moves the cursor to the specified coordinates.
+ 
+        Args:
+            coord_x (int): The x-coordinate of the destination.
+            coord_y (int): The y-coordinate of the destination.
+        """
         pass
     
     def click_on_mouse(self):
+        """
+        Simulates a left-click on the mouse at the current cursor position.
+        """
         pass
     
     def focus_on_window(self, window_id: int):
@@ -158,29 +174,76 @@ class Monitor :
         
 
 class MonitorMac(Monitor):
+    """
+    A class representing a monitor for a MAC machine.
+    
+    Inherits from the Monitor class.
+    
+    Args:
+        _id (int): The ID number of the monitor.
+    
+    Attributes:
+        windows (list): A list of Windows associated with this monitor.
+        width (int): The width of the monitor screen.
+        height (int): The height of the monitor screen.
+        x_offset (int): The x-coordinate of the top-left corner of the monitor screen.
+        y_offset (int): The y-coordinate of the top-left corner of the monitor screen.
+    """
     
     def __init__(self, _id: int):
         super().__init__(_id)
         self._get_dofus_windows()
         self._get_monitor_offset()
         
-    def _get_dofus_windows(self):        
+    def _get_dofus_windows(self):   
+        """
+        Gets the Dofus windows associated with this monitor.
+        """
         windows_snapshot = Quartz.CGWindowListCopyWindowInfo(Quartz.kCGWindowListOptionAll, Quartz.kCGNullWindowID)
         for i, window in enumerate(windows_snapshot) :
             my_window = Window(i, window['kCGWindowOwnerName'],window)
             self.windows.append(my_window)
     
     def _get_monitor_offset():
+        """
+        Gets the pixel coordinates of the top-left corner of the monitor screen.
+        """
         pass
     
     def move_cursor(self, coord_x: int, coord_y: int):
+        """
+        Moves the cursor to the specified coordinates.
+ 
+        Args:
+            coord_x (int): The x-coordinate of the destination.
+            coord_y (int): The y-coordinate of the destination.
+        """
         pass
     
     def click_on_mouse(self):
+        """
+        Simulates a left-click on the mouse at the current cursor position.
+        """
         pass
     
     
 class MonitorWindows(Monitor):
+    """
+    A class representing a monitor for a Windows machine.
+    
+    Inherits from the Monitor class.
+    
+    Args:
+        _id (int): The ID number of the monitor.
+    
+    Attributes:
+        windows (list): A list of Windows associated with this monitor.
+        width (int): The width of the monitor screen.
+        height (int): The height of the monitor screen.
+        x_offset (int): The x-coordinate of the top-left corner of the monitor screen.
+        y_offset (int): The y-coordinate of the top-left corner of the monitor screen.
+    
+    """
     
     def __init__(self, _id: int):
         super().__init__(_id)
@@ -195,6 +258,10 @@ class MonitorWindows(Monitor):
         self.height = self.windows[0].height 
         
     def _get_dofus_windows(self):
+        """
+        Gets the Dofus windows associated with this monitor.
+        """
+        
         monitor_rect = pyautogui.locateOnScreen(self._id)
         _id = 0
         for window in pyautogui.getWindowsWithTitle('Dofus'):
@@ -205,15 +272,28 @@ class MonitorWindows(Monitor):
                 _id += 1
                 
     def _get_monitor_offset(self):
+        """
+        Gets the pixel coordinates of the top-left corner of the monitor screen.
+        """
         monitor_rect = pyautogui.getMonitors()[self._id]
         # Get the top-left corner of the monitor in pixel coordinates
         self.x_offset = monitor_rect.left 
         self.y_offset = monitor_rect.top 
     
     def move_cursor(self, coord_x: int, coord_y: int):
+        """
+        Moves the cursor to the specified coordinates.
+ 
+        Args:
+            coord_x (int): The x-coordinate of the destination.
+            coord_y (int): The y-coordinate of the destination.
+        """
         x = coord_x + self.x_offset
         y = coord_y + self.y_offset
         pyautogui.moveTo((x, y))
     
     def click_on_mouse(self):
+        """
+        Simulates a left-click on the mouse at the current cursor position.
+        """
         pyautogui.click(button='left')
