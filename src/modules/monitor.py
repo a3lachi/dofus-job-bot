@@ -1,14 +1,13 @@
 import Quartz
 from window import Window
-import sys
-import os
-sys.path.insert(1, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))) ; import config
 import pyautogui
 import pandas
 import Quartz.CoreGraphics as CG
 from PIL import Image, ImageGrab
 import numpy as np
 import cv2 
+import os, sys
+sys.path.insert(1, os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..'))) ; import config
 
 class Monitor : 
     """ 
