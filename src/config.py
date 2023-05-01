@@ -7,7 +7,7 @@ OS_MAC = 'Darwin'
 OS_WINDOWS = 'Windows'
 
 # Recoltable map positions file path-------------------------------------------------------------------
-RECOLTABLE_MAP_POSITIONS_FILE_PATH = lambda recoltable: f"../data/{recoltable}_map_positions.csv"
+RECOLTABLE_MAP_POSITIONS_FILE_PATH =  "../data/recoltable_map_positions.csv"
 RECOLTABLE_PIXEL_COORDINATES_FILE_PATH = lambda map_pos: f"../data/recoltable_pixel_coordinates/{map_pos}.csv" 
 
 # "Dofosdb" api url for web scraping recoltable map positions.
